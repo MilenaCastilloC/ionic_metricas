@@ -81,6 +81,7 @@ export class AlbumCreateComponent implements OnInit {
       this.albumForm.reset()
       this.routerPath.navigate([`/albumes/${this.userId}/${this.token}`])
     },
+  window.top.postMessage('createAlbum', 'http://localhost/albums/list')
     error=> {
       if(error.statusText === "UNAUTHORIZED"){
         this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
